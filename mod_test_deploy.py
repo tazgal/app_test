@@ -1,4 +1,5 @@
 import streamlit as st
+import webbrowser
 
 st.write("Αυτή είναι μια δοκιμαστική εφαρμογή")
 
