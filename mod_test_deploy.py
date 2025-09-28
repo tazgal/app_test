@@ -1,5 +1,7 @@
 import streamlit as st
 import webbrowser
+import re
+from nltk.tokenize import sent_tokenize
 
 st.write("Αυτή είναι μια δοκιμαστική εφαρμογή")
 
@@ -19,10 +21,7 @@ def extract_date_sentences(text):
     Παίρνει κείμενο και τυπώνει τις προτάσεις που περιέχουν ημερομηνίες.
     Υποστηρίζει μορφές όπως: 12 Ιανουαρίου 2023 ή 21/06/2023
     """
-    import re
-    from nltk.tokenize import sent_tokenize
-    import streamlit as st
-    
+   
     # regex για ημερομηνίες (π.χ. 12 Ιανουαρίου 2023)
     greek_months = "Ιανουαρίου|Φεβρουαρίου|Μαρτίου|Απριλίου|Μαΐου|Ιουνίου|Ιουλίου|Αυγούστου|Σεπτεμβρίου|Οκτωβρίου|Νοεμβρίου|Δεκεμβρίου"
     date_pattern_1 = re.compile(rf"\b\d{{1,2}}\s({greek_months})\s\d{{4}}\b")
